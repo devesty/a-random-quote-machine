@@ -6,8 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Quote</title>
     <link rel="stylesheet"  "href=styles.css" >
+    <style>
+    body {
+      background: whitesmoke;
+    }
+    .quote-body {
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 35px;
+    }
+    #intro {
+      margin-bottom: 20px;
+    }
+.content {
+  border: 1px solid black;
+height: 250px;
+   width: 400px;
+margin-left: 300px;
+border-radius: 30px;
+color: black;
+margin-bottom: 25px;
+background-color: aqua
+}
+#quote {
+    
+    border: 1px solid black;
+    margin-top: 30px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 350px;
+    margin-left: 25px;
+    border-radius: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+background-color: white;
+  }
+
+
+
+
+    </style>
 </head>
 <body>
-  <h2>Code Generator</h2>  
+  <div class="quote-body">
+  <h2>Quote Generator</h2>  
+  <p id="intro">WELCOME TO MY QUOTE GENERATOR.Please click the button below:</p>
+<div class="content">
+  <p id="quote"></p>
+<p id="author"></p>
+
+</div>
+<button id="button" onclick="generateQuote()">Click here</button>
+  </div>
+  <h6>By: Yours Truly</h6>
+  <script>
+  const arrayOfQuotes = [
+    {'author': 'Nelson Mandela', 
+        'quote': 'The greatest glory in living lies not in never falling, but in rising every time we fall.'
+    },
+    {'author': 'Walt Disney', 
+        'quote': 'The way to get started is to quit talking and begin doing.'
+    },
+    {'author': 'Eleanor Roosevelt', 
+        'quote': 'If life were predictable it would cease to be life, and be without flavor.'
+    },
+    {'author': 'Oprah Winfrey', 
+        'quote': 'If you look at what you have in life, you`ll always have more. If you look at what you don`t have in life, you`ll never have enough'
+    },
+    {'author': 'James Cameron', 
+        'quote': 'If you set your goals ridiculously high and it`s a failure, you will fail above everyone else`s success'
+    },
+    {'author': 'Elbert Hubbard', 
+        'quote': 'Do not take life too seriously. You will not get out alive.'
+    },
+    {'author': 'John Lennon', 
+        'quote': 'Life is what happens when you`re busy making other plans.'
+    }
+];
+
+
+function  generateQuote() {
+  var quote = document.getElementById("quote");
+  var author = document.getElementById("author");
+
+const number = Number.parseInt(Math.random() * arrayOfQuotes.length + 1);
+quote.innerHTML = '"' + arrayOfQuotes[number].quote + '"'
+author.innerHTML = "Author:" + arrayOfQuotes[number].author;
+  
+};
+
+   
+
+
+  </script>
 </body>
 </html>
